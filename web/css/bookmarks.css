@@ -205,7 +205,7 @@ div#header .brand:hover {
 
 #header-inner {
     margin: auto;
-    width: 900px;
+    width: 1000px;
 }
 
 .alert {
@@ -264,7 +264,7 @@ div#header .brand:hover {
     margin-right: auto;
     padding: 20px;
     padding-top: 80px;
-    max-width: 900px;
+    max-width: 1000px;
     font-family: arial,sans-serif;
     background-color: #fff;
     border: 1px solid #c4c4c4;
