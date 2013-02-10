@@ -55,16 +55,16 @@
                 <a href="{{ path('homepage') }}" class="brand">Zelten</a>
                 {% if app.session.get('entity_url') %}
                 <div class="pull-right current-profile">
+			<div class="header-info">
+                   	 {% endif %}
+                   	 <a id="notifications" href="{{ path('stream_notifications') }}"><div class="icon-envelope"></div> <span class="count"></span></a>
 
-		<div class="header-info">
-                    {% endif %}
-                    <a id="notifications" href="{{ path('stream_notifications') }}"><div class="icon-envelope"></div> <span class="count"></span></a>
-                    {% if current_entity().basic.avatar %}
-                    <img class="avatar img-polaroid-header" src="{{ current_entity().basic.avatar }}" width="30" height="30" />
-                    {% else %}
-                    <img class="avatar img-polaroid-header" src="/zelten.png" height="30" width="30" />
-                    {% endif %}
-		</div>
+                    	{% if current_entity().basic.avatar %}
+                   	 <img class="avatar img-polaroid-header" src="{{ current_entity().basic.avatar }}" width="30" height="30" />
+                    	{% else %}
+                    	<img class="avatar img-polaroid-header" src="/zelten.png" height="30" width="30" />
+                   	 {% endif %}
+			</div>
 
                     {% if app.session.get('entity_url') %}
                     <ul class="header-navigation">

@@ -1,4 +1,3 @@
-
 {% extends app.request.isXmlHttpRequest() ? "ajax.html" : "layout.html" %}
 
 {% block title %}{% if mentioned_entity is defined %}Notifications{% else %}Stream{% endif %}{% endblock %}
@@ -32,8 +31,6 @@
     {% endif %}
 
 <div id="stream-content" {% if mentioned_entity is defined %}data-mentioned-entity="{{ mentioned_entity }}"{% endif %}>
-
-
     <div class="row-fluid stream-filters">
         <div class="span6">&nbsp;</div>
         <div class="span6">
@@ -66,4 +63,3 @@
     </div>
 </div>
 {% endblock %}
-

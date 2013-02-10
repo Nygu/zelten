@@ -36,9 +36,7 @@
                         </div>
                         <div class="span6">
 
-                            {% if message.content.reply is defined %}
-                            <p class="pull-right"><a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-conversation">In reply to {{ message.content.reply.entity.name }}</a></p>
-                            {% endif %}
+
                         </div>
                     </div>
                 </header>
@@ -80,7 +78,7 @@
             <div class="box-footer">
                 <div class="row-fluid">
                     <div class="span8 message-stats">
-                        {% if message.type == 'status' %}
+                        <!--{% if message.type == 'status' %}
                         <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-tooltip" data-original-title="Status Message"><i class="icon-envelope post-type"></i></a>
                         {% elseif message.type == 'bookmark' %}
                         <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-tooltip" data-original-title="Bookmark"><i class="icon-link post-type"></i></a>
@@ -88,10 +86,10 @@
                         <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-tooltip" data-original-title="Essay"><i class="icon-pencil post-type"></i></a>
                         {% elseif message.type == 'repost' %}
                         <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-tooltip" data-original-title="Repost"><i class="icon-retweet post-type"></i></a>
-                        {% endif %}
+                        {% endif %}-->
 
-                        <abbr class="timeago" title="{{ message.published|date('c') }}">{{ message.published|date }}</abbr>
-                        - {% if message.app.url is defined %}<a href="{{ message.app.url }}" target="_blank">{% endif %}{{ message.app.name }}{% if message.app.url is defined %}</a>{% endif %}  -
+                        
+ 
 
                         {% if message.isPublic() %}
                         <a href="#" class="show-popover" rel="popover" data-content="This content is visible to everyone on the internet." data-original-title="Permissions">Public</a>
@@ -113,6 +111,11 @@
     </ul>
     {% endspaceless %}" data-original-title="Permissions">Limited</a>
                         {% endif %}
+			on <abbr class="timeago" title="{{ message.published|date('c') }}">{{ message.published|date }}</abbr>
+                        via {% if message.app.url is defined %}<a href="{{ message.app.url }}" target="_blank">{% endif %}{{ message.app.name }}{% if message.app.url is defined %}</a>{% endif %}
+                            {% if message.content.reply is defined %}
+                           in reply to <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-conversation"> {{ message.content.reply.entity.name }}</a>
+                            {% endif %}
                     </div>
                     <div class="span4">
                         <div class="btn-group pull-right">
