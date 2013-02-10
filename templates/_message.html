@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <div class="row-fluid footer-padding">
+                <div class="row-fluid">
                     <div class="span8 message-stats">
                         {% if message.type == 'status' %}
                         <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-tooltip" data-original-title="Status Message"><i class="icon-envelope post-type"></i></a>
