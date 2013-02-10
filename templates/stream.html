@@ -1,16 +1,17 @@
+
 {% extends app.request.isXmlHttpRequest() ? "ajax.html" : "layout.html" %}
 
 {% block title %}{% if mentioned_entity is defined %}Notifications{% else %}Stream{% endif %}{% endblock %}
 
 {% block content %}
-<div id="stream" {% if mentioned_entity is defined %}data-mentioned-entity="{{ mentioned_entity }}"{% endif %}>
+
     {% if post_add %}
     <div class="stream-add-message-box">
         <form action="{{ path('stream_write') }}" method="message" class="stream-message-add">
-            <div class="box box-highlight">
-                <div class="box-content">
+            <div class="">
+                <div class="box-content" >
                     <div  class="form-inline">
-                        <textarea class="message span12" name="message" rows="1" placeholder="Share whats new..."></textarea>
+                        <textarea class="message span12" id="publisher-inner" name="message" rows="1" placeholder="Share whats new..."></textarea>
                     </div>
                 </div>
                 <div class="box-footer actions hidden-content">
@@ -29,6 +30,9 @@
         </form>
     </div>
     {% endif %}
+
+<div id="stream-content" {% if mentioned_entity is defined %}data-mentioned-entity="{{ mentioned_entity }}"{% endif %}>
+
 
     <div class="row-fluid stream-filters">
         <div class="span6">&nbsp;</div>

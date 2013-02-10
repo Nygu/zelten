@@ -2,10 +2,10 @@
     data-published="{{ message.published|date('U') }}"
     {% if message.content.mentions is defined %}data-mentions="{{ message.content.mentions }}"{% endif %}>
     {% if message.type == "follower" %}
-    <div class="span1">
+    <div class="span2">
         <a class="user-details" href="{{ path('stream_user', {'entity': message.content.follower.uri|url_encode}) }}"><img src="{% if message.content.follower.basic.avatar %}{{ message.content.follower.basic.avatar}}{% else %}/zelten.png{% endif %}" height="90" width="90" class="img-polaroid" /></a>
     </div>
-    <div class="span11">
+    <div class="span10">
         <div class="box">
             <div class="box-content">
                 <a href="{{ path('stream_user', {'entity': message.content.follower.uri|url_encode}) }}" class="user-details">{{ message.content.follower.name }}</a> now follows you!
@@ -21,10 +21,10 @@
         </div>
     </div>
     {% else %}
-    <div class="span1">
+    <div class="span2">
         <a class="user-details" href="{{ path('stream_user', {'entity': message.entity.uri|url_encode}) }}"><img src="{% if message.entity.basic.avatar %}{{ message.entity.basic.avatar}}{% else %}/zelten.png{% endif %}" height="90" width="90" class="img-polaroid" /></a>
     </div>
-    <div class="span11">
+    <div class="span10">
         <div class="box">
             <div class="box-content">
                 <header>
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <div class="row-fluid">
+                <div class="row-fluid footer-padding">
                     <div class="span8 message-stats">
                         {% if message.type == 'status' %}
                         <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-tooltip" data-original-title="Status Message"><i class="icon-envelope post-type"></i></a>
