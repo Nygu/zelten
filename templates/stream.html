@@ -10,7 +10,16 @@
             <div class="box box-highlight">
                 <div class="box-content" >
                     <div  class="form-inline">
+                        <div class="span2">
+                    	{% if current_entity().basic.avatar %}
+                   	 <img class="avatar img-polaroid-sidebar" src="{{ current_entity().basic.avatar }}" width="60" height="60" />
+                    	{% else %}
+                    	<img class="avatar img-polaroid-sidebar" src="/zelten.png" height="60" width="60" />
+                   	 {% endif %}
+                        </div>
+                        <div class="span10">
                         <textarea class="message span12" id="publisher-inner" name="message" rows="1" placeholder="Share whats new..."></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="box-footer actions hidden-content">

@@ -24,6 +24,8 @@ body {
 }
 .box-content {
     padding: 10px;
+    min-height: 60px;
+    background: white;
 }
 .box-highlight {
     background-color: #f9f9f9;
@@ -131,7 +133,7 @@ footer {
 }
 
 .stream-messages {
-    padding: 30px;
+    padding-left: 30px;
     border-left: 1px solid #ddd;
 }
 
@@ -196,7 +198,7 @@ div#header .brand {
     margin-left: -20px;
     font-size: 40px;
     font-weight: 200;
-    color: #fff;
+    color: rgba(148, 206, 0, 0.9);
     text-shadow: 0 1px 1px black;
 }
 div#header .brand:hover {
@@ -235,6 +237,10 @@ div#header .brand:hover {
     margin-top: -7px;
 }
 
+div.stream-add-message-box {
+    margin-left: 30px;
+}
+
 .header-navigation li{
     display: inline;
     width: auto;
@@ -249,13 +255,13 @@ div#header .brand:hover {
 .header-navigation {
     float: right;
     width: auto;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .header-info {
     float: right;
     width: auto;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 10px;
 }
 
@@ -266,13 +272,13 @@ div#header .brand:hover {
     padding-top: 80px;
     max-width: 1000px;
     font-family: arial,sans-serif;
-    background-color: #fff;
+/*    background-color: #fff;
     border: 1px solid #c4c4c4;
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
     -ms-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
     -o-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); */
 }
 .sidebar {
     padding-top: 40px;
