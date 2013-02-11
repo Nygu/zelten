@@ -24,11 +24,20 @@ body {
 }
 .box-content {
     padding: 10px;
-    min-height: 60px;
     background: white;
 }
+.public-label {
+    color: green;
+}
+.private-label {
+    color: black;
+}
+.limited-label {
+    color: orangered;
+}
 .box-highlight {
-    background-color: #f9f9f9;
+    background-color: white;
+    min-height: 70px;
 }
 .box-footer {
     border-top: 1px solid #c4c4c4;
@@ -271,7 +280,8 @@ div.stream-add-message-box {
     padding: 20px;
     padding-top: 80px;
     max-width: 1000px;
-    font-family: arial,sans-serif;
+    font-family: open sans, arial,sans-serif;
+    font-size: 12px;
 /*    background-color: #fff;
     border: 1px solid #c4c4c4;
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
@@ -291,6 +301,12 @@ div.stream-add-message-box {
     padding: 0px;
 }
 .content {
+}
+a {
+    color: rgb(56, 55, 55);
+}
+a:hover {
+    color: rgb(56, 55, 55);
 }
 .conversation-message {
     font-size: 8pt;
@@ -347,7 +363,7 @@ a#notifications {
 .label {
     background: white;
     padding: 0px;
-    color: #08c;
+    color: rgb(1, 118, 177);
     text-shadow: none;
     font-weight: normal;
 }

@@ -92,11 +92,11 @@
  
 
                         {% if message.isPublic() %}
-                        <a href="#" class="show-popover" rel="popover" data-content="This content is visible to everyone on the internet." data-original-title="Permissions">Public</a>
+                        <a href="#" class="show-popover public-label" rel="popover" data-content="This content is visible to everyone on the internet." data-original-title="Permissions">Public</a>
                         {% elseif message.isPrivate() %}
-                            <a href="#" class="show-popover" rel="popover" data-content="This content is private to you and anyone mentioned." data-original-title="Permissions">Private</a>
+                            <a href="#" class="show-popover private-label" rel="popover" data-content="This content is private to you and anyone mentioned." data-original-title="Permissions">Private</a>
                         {% else %}
-                        <a href="#" class="show-popover" rel="popover" data-content="
+                        <a href="#" class="show-popover limited-label" rel="popover" data-content="
     {% spaceless %}
     This content is limited to the following groups and entities:
 
