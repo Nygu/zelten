@@ -6,10 +6,10 @@
 
 <div id="main" class="container-fluid">
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span3">
        {% if profile.basic.avatar %}
         <img src="{{ profile.basic.avatar }}"
-            class="img-polaroid"
+            class="img-polaroid-profile"
             height="{% if not app.request.isXmlHttpRequest() %}1{% endif %}75"
             width="{% if not app.request.isXmlHttpRequest() %}1{% endif %}75" />
         {% endif %}

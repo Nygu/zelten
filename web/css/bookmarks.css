@@ -241,6 +241,12 @@ div#header .brand:hover {
     padding: 0px;
     border: 2px solid white;
 }
+.img-polaroid-profile {
+    width: 175px;
+    box-shadow: 0 1px 3px rgb(54, 54, 54);
+    padding: 0px;
+    border: 2px solid white;
+}
 
 .img-polaroid-header {
     width: 32px;

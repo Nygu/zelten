@@ -4,6 +4,8 @@
 
 {% block content %}
 {% if not app.request.isXmlHttpRequest() %}
+<div id="main" class="container-fluid">
+<div class="row-fluid">
 <h4>{{ title }}</h4>
 
 {% endif %}
@@ -14,6 +16,7 @@
     profile: profile,
     route: route
 } %}
-
+</div>
+</div>
 {% endblock %}
 
