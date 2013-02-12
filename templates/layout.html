@@ -86,25 +86,8 @@
 
         <div id="main" class="container-fluid">
             <div class="row-fluid">
-                
-		<div class="span2">
-			<div class="sidebar">
-
-                    <footer class="hidden-phone hidden-tablet">
-                        Developed by <a href="https://beberlei.tent.is">^beberlei</a>.
-                        Please send feedback via <a href="https://github.com/beberlei/zelten">Github</a>.
-                    </footer>
-			</div>
-                </div>
-
-                <div class="span8">
-                    <div class="content">
-                        <div class="errors"></div>
 
                         {% block content %}{% endblock %}
-                    </div>
-                </div>
-
 
                 <div class="span4" style="padding-top: 50px;">
                     {% block sidebar %}{% endblock %}
@@ -112,6 +95,13 @@
             </div>
 
         </div>
+
+			<div class="sidebar">
+                    <footer class="hidden-phone hidden-tablet">
+                        Developed by <a href="https://beberlei.tent.is">^beberlei</a>.
+                        Please send feedback via <a href="https://github.com/beberlei/zelten">Github</a>.
+                    </footer>
+            </div>
 
 <script type="text/html" id="error-message">
 <div class="alert alert-danger">

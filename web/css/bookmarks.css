@@ -1,7 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
 body {
     margin: 0px;
     padding: 0px;
-    background-color: #eee;
+    background: #eee;
     font-size: 13px;
 }
 .sidebar, .navbar {
@@ -230,6 +232,7 @@ div#header .brand:hover {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     z-index: 99;
+    width: 640px;
 }
 
 .img-polaroid {
@@ -278,9 +281,9 @@ div.stream-add-message-box {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    padding-top: 80px;
+    padding-top: 100px;
     max-width: 1000px;
-    font-family: open sans, arial,sans-serif;
+    font-family: 'Open Sans', arial, sans-serif;
     font-size: 12px;
 /*    background-color: #fff;
     border: 1px solid #c4c4c4;
@@ -301,6 +304,11 @@ div.stream-add-message-box {
     padding: 0px;
 }
 .content {
+}
+.alert-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
 }
 a {
     color: rgb(56, 55, 55);

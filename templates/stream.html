@@ -5,6 +5,11 @@
 {% block content %}
 
     {% if post_add %}
+
+<div class="span2">
+Sidebar 1
+</div>
+<div class="span8">
     <div class="stream-add-message-box">
         <form action="{{ path('stream_write') }}" method="message" class="stream-message-add">
             <div class="box box-highlight">
@@ -70,5 +75,9 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+<div class="span2">
+Sidebar 2
 </div>
 {% endblock %}

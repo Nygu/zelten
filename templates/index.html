@@ -11,8 +11,8 @@
         {% else %}
         <form method="post" action="{{ path('login') }}" class="form-inline">
             <input type="text" name="entity_url" size="60" placeholder="Your Tent Username or URL" class="span6" />
-            <input type="submit" class="btn btn-success" value="Login" />
-            <a href="https://tent.is" class="btn">Register</a>
+            <input type="submit" class="btn btn-success" value="Login with Tent" />
+            <a href="https://tent.is" class="btn">Sign up for a Tent account</a>
         </form>
         {% endif %}
     </div>
@@ -40,6 +40,10 @@
             So far <strong>{{ stats.total_users }}</strong>
             users have registered with Zelten.
         </p>
+        <h3>SocialSync</h3>
+
+        <p>You can connect your Twitter account to this application and automatically push
+            Tent status posts to Twitter.</p>
     </div>
 
     <div class="span6">
@@ -53,18 +57,6 @@
             You can install your own Tent server or use a free one, such as <a
                 href="http://tent.is" target="_blank">Tent.is</a>.
         </p>
-    </div>
-</div>
-
-<div class="row-fluid">
-    <div class="span6">
-        <h3>SocialSync</h3>
-
-        <p>You can connect your Twitter account to this application and automatically push
-            Tent status posts to Twitter.</p>
-    </div>
-
-    <div class="span6">
         <h3>Is this OpenSource?</h3>
 
         <p>
