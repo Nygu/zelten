@@ -6,10 +6,13 @@
 
     {% if post_add %}
 
-<div class="span2">
-Sidebar 1
-</div>
-<div class="span8">
+
+<div style="background: white; border-bottom: 1px solid #ccc;">
+<div id="publisher-main" class="container-fluid">
+<div class="row-fluid">
+<div class="span2" id="publisher-left-sidebar"></div>
+<div class="span8" id="publisher">
+
     <div class="stream-add-message-box">
         <form action="{{ path('stream_write') }}" method="message" class="stream-message-add">
             <div class="box box-highlight">
@@ -44,40 +47,52 @@ Sidebar 1
     </div>
     {% endif %}
 
-<div id="stream-content" {% if mentioned_entity is defined %}data-mentioned-entity="{{ mentioned_entity }}"{% endif %}>
-    <div class="row-fluid stream-filters">
-        <div class="span6">&nbsp;</div>
-        <div class="span6">
-            <div class="filter-post-type btn-group pull-right" data-toggle="buttons-radio">
-                <button value="all" type="button" class="btn active show-tooltip" title="All Posts">All</button>
-                <button value="status" type="button" class="btn show-tooltip" title="Show only Status Posts"><i class="icon-envelope"></i></button>
-                {% if mentioned_entity is not defined %}
-                <button value="essay" type="button" class="btn show-tooltip" title="Show only Essays"><i class="icon-pencil"></i></button>
-                <button value="repost" type="button" class="btn show-tooltip" title="Show only Reposts"><i class="icon-retweet"></i></button>
-                <button value="bookmark" type="button" class="btn show-tooltip" title="Show only Bookmarks"><i class="icon-link"></i></button>
-                <button value="favorite" type="button" class="btn show-tooltip" title="Show only Favorited"><i class="icon-star"></i></button>
-                {% else %}
-                <button value="follower" type="button" class="btn show-tooltip" title="Show only Follower Notifications"><i class="icon-user"></i></button>
-                {% endif %}
-            </div>
-        </div>
-    </div>
+</div>
+<div class="span2" id="publisher-right-sidebar"></div>
+</div>
+</div>
+</div>
 
-    <div class="stream-notifications"></div>
+<div id="stream-main" class="container-fluid">
+<div class="row-fluid">
+<div class="span2" id="stream-left-sidebar">
+                <div class="filter-post-type pull-right" data-toggle="buttons-radio">
+                    <button value="all" type="button" class="btn active show-tooltip" title="All Posts">All</button>
+                    <button value="status" type="button" class="btn show-tooltip" title="Show only Status Posts"><i class="icon-envelope"></i></button>
+                    {% if mentioned_entity is not defined %}
+                    <button value="essay" type="button" class="btn show-tooltip" title="Show only Essays"><i class="icon-pencil"></i></button>
+                    <button value="repost" type="button" class="btn show-tooltip" title="Show only Reposts"><i class="icon-retweet"></i></button>
+                    <button value="bookmark" type="button" class="btn show-tooltip" title="Show only Bookmarks"><i class="icon-link"></i></button>
+                    <button value="favorite" type="button" class="btn show-tooltip" title="Show only Favorited"><i class="icon-star"></i></button>
+                    {% else %}
+                    <button value="follower" type="button" class="btn show-tooltip" title="Show only Follower Notifications"><i class="icon-user"></i></button>
+                    {% endif %}
+                </div>
+</div>
 
-    <div class="stream-messages">
-    {% for message in messages.messages %}
-        {% include "_message.html" with {'message': message} %}
-    {% endfor %}
-        <div class="hidden-desktop visible-tablet visible-phone">
-            <div class="alert alert-info" style="text-align:center;">
-                <a href="#" class="loadOlderPosts">Load more posts</a>
+<div class="span8">
+
+
+    <div id="stream-content" {% if mentioned_entity is defined %}data-mentioned-entity="{{ mentioned_entity }}"{% endif %}>
+
+       <div class="stream-notifications"></div>
+
+       <div class="stream-messages">
+        {% for message in messages.messages %}
+          {% include "_message.html" with {'message': message} %}
+      {% endfor %}
+           <div class="hidden-desktop visible-tablet visible-phone">
+               <div class="alert alert-info" style="text-align:center;">
+                  <a href="#" class="loadOlderPosts">Load more posts</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 <div class="span2">
-Sidebar 2
+</div>
+
+</div>
 </div>
 {% endblock %}

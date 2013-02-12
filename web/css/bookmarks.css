@@ -40,6 +40,7 @@ body {
 .box-highlight {
     background-color: white;
     min-height: 70px;
+    box-shadow: none;
 }
 .box-footer {
     border-top: 1px solid #c4c4c4;
@@ -252,6 +253,9 @@ div#header .brand:hover {
 div.stream-add-message-box {
     margin-left: 30px;
 }
+div#stream-left-sidebar {
+    /*position: fixed;*/
+}
 
 .header-navigation li{
     display: inline;
@@ -285,13 +289,24 @@ div.stream-add-message-box {
     max-width: 1000px;
     font-family: 'Open Sans', arial, sans-serif;
     font-size: 12px;
-/*    background-color: #fff;
-    border: 1px solid #c4c4c4;
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-    -ms-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-    -o-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); */
+}
+#publisher-main {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    padding-top: 100px;
+    max-width: 1000px;
+    font-family: 'Open Sans', arial, sans-serif;
+    font-size: 12px;
+}
+#stream-main {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    padding-top: 50px;
+    max-width: 1000px;
+    font-family: 'Open Sans', arial, sans-serif;
+    font-size: 12px;
 }
 .sidebar {
     padding-top: 40px;
