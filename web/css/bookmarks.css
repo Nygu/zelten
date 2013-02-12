@@ -146,11 +146,10 @@ footer {
 
 .stream-messages {
     padding-left: 30px;
-    border-left: 1px solid #ddd;
 }
 
 #publisher-inner {
-    height: 50px;
+    height: 70px;
     border-radius: 5px;
 }
 
@@ -240,7 +239,7 @@ div#header .brand:hover {
     width: 64px;
     box-shadow: 0 1px 3px rgb(54, 54, 54);
     padding: 0px;
-    border: 3px solid white;
+    border: 2px solid white;
 }
 
 .img-polaroid-header {
@@ -302,11 +301,18 @@ div#stream-left-sidebar {
 #stream-main {
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
-    padding-top: 50px;
     max-width: 1000px;
     font-family: 'Open Sans', arial, sans-serif;
     font-size: 12px;
+}
+#stream-content {
+    padding-top: 30px;
+}
+#stream-left-sidebar {
+    padding-top: 30px;
+}
+#stream-container {
+    border-left: 1px solid #ccc;
 }
 .sidebar {
     padding-top: 40px;
