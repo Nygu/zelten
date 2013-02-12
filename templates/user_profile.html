@@ -6,24 +6,41 @@
 
 <div id="main" class="container-fluid">
     <div class="row-fluid">
-        <div class="span2"></div>
-        <div class="span8">
-                {% include "_profile.html" with {"profile": profile, "you": you} %}
-    
-               <div id="stream" data-entity="{{ profile.entity }}">
-                    <div class="stream-notifications"></div>
-                    <div class="stream-messages"></div>
-        
-               </div>
-        </div>
-        {% endblock %}
-    
-        {% block sidebar %}
-        <div class="span2">
-            <div class="following">
+        <div class="span4">
+       {% if profile.basic.avatar %}
+        <img src="{{ profile.basic.avatar }}"
+            class="img-polaroid"
+            height="{% if not app.request.isXmlHttpRequest() %}1{% endif %}75"
+            width="{% if not app.request.isXmlHttpRequest() %}1{% endif %}75" />
+        {% endif %}
+
+        {% if not you and app.session.get('entity_url') %}
+        <p align="center" style="padding-top: 10px">
+            <form class="follow" method="post" action="{{ path('profile_follow') }}">
+                <input type="hidden" name="entity" value="{{ profile.entity }}" />
+                {% if is_following(profile.entity) %}
+                <input class="action" type="hidden" name="action" value="unfollow" />
+                <input type="submit" class="btn btn-danger" value="Unfollow" />
+                {% else %}
+                <input class="action" type="hidden" name="action" value="follow" />
+                <input type="submit" class="btn btn-success" value="Follow" />
+                {% endif %}
+            </form>
+        </p>
+        {% endif %}
+        <h3>{{ profile.name }}</h3>
+
+            <p><a href="{{ profile.uri }}">{{ profile.uri }}</a></p>
+
+        {% if profile.basic.bio %}<p>{{ profile.basic.bio }}</p>{% endif %}
+
+        {% if profile.basic.location %}<p>Lives in {{ profile.basic.location }}</p>{% endif %}
+
+        {% if profile.basic.birthday %}<p>Was born on {{profile.basic.birthday }}</p>{%endif%}
+           <div class="following">
                 {% include "_user_list.html" with {
                     users: {'list': [], 'total': ''},
-                    title: 'following',
+                    title: 'Following',
                     profile: profile,
                     route: 'user_following'
                 } %}
@@ -32,11 +49,27 @@
             <div class="follower">
                 {% include "_user_list.html" with {
                     users: {'list': [], 'total': ''},
-                    title: 'followed by',
+                    title: 'Followed by',
                     profile: profile,
                     route: 'user_followers'
                     } %}
             </div>
+    </div>
+
+
+    <div class="span8">
+               <div id="stream" data-entity="{{ profile.entity }}">
+                    <div class="stream-notifications"></div>
+                    <div class="stream-messages"></div>
+    </div>
+
+</div>
+
+        {% endblock %}
+    
+        {% block sidebar %}
+        <div>
+ 
         </div>
     </div>
 </div>
