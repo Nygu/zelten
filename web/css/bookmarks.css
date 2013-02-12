@@ -393,7 +393,12 @@ a#notifications {
 .label-info[href] {
     background: none;
 }
-
+#login-box {
+    background: white;
+    text-align: center;
+    box-shadow: 0 1px 3px gray;
+    padding: 10px;
+}
 .label {
     background: white;
     padding: 0px;

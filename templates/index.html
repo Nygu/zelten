@@ -5,70 +5,89 @@
 {% block content %}
 <div id="main" class="container-fluid">
 <div class="row-fluid">
-    <div class="span12">
-        <h2>Get started</h2>
-
-        {% if app.session.get('entity_url') %}
-        {% else %}
-        <form method="post" action="{{ path('login') }}" class="form-inline">
-            <input type="text" name="entity_url" size="60" placeholder="Your Tent Username or URL" class="span6" />
-            <input type="submit" class="btn btn-success" value="Login with Tent" />
-            <a href="https://tent.is" class="btn">Sign up for a Tent account</a>
-        </form>
-        {% endif %}
-    </div>
-</div>
 
 <div class="row-fluid">
-    <div class="span6">
-        <h3>Share and protect your data</h3>
-
+    <div class="span8">
         <p>
-            Zelten is a new social network experience based on the Tent
-            social protocol. If you own a Tent account on any provider you
-            can use Zelten. Register on <a href="https://tent.is">Tent.is</a>
-            to get a free tent account. Except for authentication data (encrypted),
-            cache data, and aggregate numbers, we save no data permanently.
+        <h3>Welcome to Zelten</h3>
+            Zelten is a social web app that connects you to your friends through the Tent-protocol. If you own a Tent account on any provider you
+            can use Zelten.
         </p>
-
-        <ul>
-            <li>Send and recieve status messages</li>
-            <li>Mark and list your favorite Tent messages</li>
-            <li>Save and share web bookmarks</li>
-        </ul>
-
         <p>
             So far <strong>{{ stats.total_users }}</strong>
             users have registered with Zelten.
         </p>
-        <h3>SocialSync</h3>
+</div>
 
-        <p>You can connect your Twitter account to this application and automatically push
-            Tent status posts to Twitter.</p>
+    <div class="span4">
+
+        {% if app.session.get('entity_url') %}
+        {% else %}
+    <div id="login-box">
+        <h3>Login or Sign up</h3>
+        <form method="post" action="{{ path('login') }}" class="form-inline">
+            <input type="text" name="entity_url" size="60" placeholder="Log in with your Tent username"/>
+<p style="align: center;">or</p>
+            <a href="https://tent.is" class="btn">Sign up for a free Tent account</a>
+        </form>
+        {% endif %}
+    </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h2>Features</h3>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span4">
+        <h4>The usual stuff...</h4>
+        <p>
+            Zelten lets you share messages with your friends, connect to new people, mention people,
+            add hashtags, comment on messages... and pretty much all the other things you've come to expect from a social network.
+        </p>
+    </div>
+    <div class="span4">
+        <p>
+        <h4>Powered by Tent</h4>
+            <a href="http://tent.io" target="_blank">Tent</a> lets you use a whole range of apps with just a single account. All data produced and required by Tent-apps will be stored and fetched from your Tent account. This puts you in control of your own data.
+        </p>
+    </div>
+    <div class="span4">
+        <h4>Bookmarking</h4>
+        <p>Zelten allows you to create bookmarks from URL's which you can either keep to yourself or share with your friends.
+        </p>
     </div>
 
-    <div class="span6">
-        <h3>What is Tent?</h3>
+</div>
 
-        <p>
-            <a href="http://tent.io" target="_blank">Tent</a> is a
-            decentralized social network. You own your data, not one central
-            company.  Your Tent data can be saved wherever you choose and you
-            are in full control of who has access to your personal data.
-            You can install your own Tent server or use a free one, such as <a
-                href="http://tent.is" target="_blank">Tent.is</a>.
+<div class="row-fluid">
+    <div class="span4">
+        <h4>Connect to Twitter</h4>
+        <p>SocialSync allows you to connect your Tent account to Twitter to automatically push your
+            Tent status posts to Twitter.</p>
+    </div>
+    <div class="span4">
+        <h4>Privacy</h4>
+        <p>Except for authentication data (encrypted),
+            cache data, and aggregate numbers, we save no data permanently. All your data will be stored in your account at your Tent provider of choice.
         </p>
-        <h3>Is this OpenSource?</h3>
-
+    </div>
+    <div class="span4">
+        <h4>OpenSource</h4>
         <p>
-            Yes! The <a href="https://github.com/beberlei/zelten">application</a> is on Github
+            The <a href="https://github.com/beberlei/zelten">application</a> is on Github
             as well as the <a href="https://github.com/beberlei/TentPHP">TentPHP</a> client library that
             it uses internally. You can check <a href="{{ path('developers') }}">our developer resources</a>
             for information on the post types created for the Zelten product. Developers are free to use
             these post types in their projects.
         </p>
     </div>
+
 </div>
+
 </div>
 
 {% endblock %}
