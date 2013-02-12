@@ -6,6 +6,7 @@
 
     {% if post_add %}
 
+    <div id="stream" {% if mentioned_entity is defined %}data-mentioned-entity="{{ mentioned_entity }}"{% endif %}>
 
 <div style="background: white; border-bottom: 1px solid #ccc;">
 <div id="publisher-main" class="container-fluid">
@@ -30,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-footer actions hidden-content">
+                <div class="box-footer-publisher actions hidden-content">
                     <div class="row-fluid">
                         <div class="span2"><small>Visible to:</small></div>
                         <div class="span10">
@@ -73,7 +74,6 @@
 <div class="span8" id="stream-container">
 
 
-    <div id="stream" {% if mentioned_entity is defined %}data-mentioned-entity="{{ mentioned_entity }}"{% endif %}>
 
        <div class="stream-notifications"></div>
 

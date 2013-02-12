@@ -129,7 +129,6 @@ footer {
 }
 
 #stream {
-    padding-top: 30px;
 }
 .stream-filters {
     margin-bottom: 20px;
@@ -145,6 +144,7 @@ footer {
 
 .stream-messages {
     padding-left: 30px;
+    padding-top: 30px;
 }
 
 #publisher-inner {
@@ -259,6 +259,7 @@ div#header .brand:hover {
 div.stream-add-message-box {
     margin-left: 30px;
 }
+
 div#stream-left-sidebar {
     /*position: fixed;*/
 }
