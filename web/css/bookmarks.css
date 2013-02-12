@@ -129,8 +129,7 @@ footer {
 }
 
 #stream {
-    max-width: 700px;
-    padding-left: 30px;
+    padding-top: 30px;
 }
 .stream-filters {
     margin-bottom: 20px;
@@ -220,7 +219,9 @@ div#header .brand:hover {
     margin: auto;
     width: 1000px;
 }
-
+.user-card {
+    padding: 5px;
+}
 .alert {
     position: fixed;
     top: 50px;
@@ -315,9 +316,6 @@ div#stream-left-sidebar {
     max-width: 1000px;
     font-family: 'Open Sans', arial, sans-serif;
     font-size: 12px;
-}
-#stream-content {
-    padding-top: 30px;
 }
 #stream-left-sidebar {
     padding-top: 30px;
