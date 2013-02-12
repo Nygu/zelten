@@ -3,12 +3,7 @@
 {% block title %}Conversation of {{ post.entity.name }}{% endblock %}
 
 {% block content %}
-<div id="main" class="container-fluid">
-<div class="row-fluid">
 
-<div class="span2" id=""></div>
-
-<div class="span8" id="">
 <div class="conversation">
     {% if not app.request.isXmlHttpRequest() %}
         {% include "_message.html" with {'message': post} %}
@@ -28,11 +23,7 @@
     {% endif %}
     </div>
 </div>
-</div>
 
-<div class="span2" id=""></div>
 
-</div>
-</div>
 {% endblock %}
 

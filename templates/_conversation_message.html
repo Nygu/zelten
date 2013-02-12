@@ -1,8 +1,9 @@
+
 <div class="row-fluid conversation-message">
-    <div class="span1">
-        <a href="{{ path('stream_user', {'entity': message.entity.uri|url_encode}) }}" class="user-details"><img src="{% if message.entity.basic.avatar %}{{ message.entity.basic.avatar }}{% else %}/zelten.png{% endif %}" width="30" height="30" class="img-polaroid" /></a>
+    <div class="span2">
+        <a href="{{ path('stream_user', {'entity': message.entity.uri|url_encode}) }}" class="user-details"><img src="{% if message.entity.basic.avatar %}{{ message.entity.basic.avatar }}{% else %}/zelten.png{% endif %}" width="30" height="30" class="img-polaroid-comment" /></a>
     </div>
-    <div class="span11">
+    <div class="span10">
         <header>
             <a class="user-details" href="{{ path('stream_user', {'entity': message.entity.uri|url_encode}) }}">{{ message.entity.name }}</a>
             -  <a class="timeago" title="{{ message.published|date('c') }}" href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}">{{ message.published|date('H:i') }}</a>

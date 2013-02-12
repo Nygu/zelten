@@ -43,13 +43,17 @@ body {
     box-shadow: none;
 }
 .box-footer {
+}
+#message-footer {
     border-top: 1px solid #c4c4c4;
-    padding: 4px;
     padding-bottom: 0px;
     background: #fafafa;
-    padding-left: 10px;
     font-size: 12pt;
     color: #c4c4c4;
+}
+#message-footer-padding {
+    padding: 4px;
+    padding-left: 10px;
 }
 p.bookmark-description {
     color: #777777;
@@ -240,20 +244,29 @@ div#header .brand:hover {
     width: 64px;
     box-shadow: 0 1px 3px rgb(54, 54, 54);
     padding: 0px;
-    border: 2px solid white;
+    border-radius: 5px;
+    border: none;
 }
 .img-polaroid-profile {
     width: 175px;
     box-shadow: 0 1px 3px rgb(54, 54, 54);
     padding: 0px;
-    border: 2px solid white;
+    border-radius: 5px;
+    border: none;
 }
-
+.img-polaroid-comment {
+    width: 48px;
+    box-shadow: 0 1px 3px rgb(54, 54, 54);
+    padding: 0px;
+    border-radius: 5px;
+    border: none;
+}
 .img-polaroid-header {
     width: 32px;
     height: 32px;
     margin-left: 10px;
     margin-top: -7px;
+    border: none;
 }
 
 div.stream-add-message-box {
@@ -392,8 +405,10 @@ a#notifications {
 .status-length-left {
     font-size:8pt;
 }
-.conversation {
+#comment-section {
     max-width: 700px;
+    border-top: 1px solid #ccc;
+    padding: 10px;
 }
 .label-info[href] {
     background: none;

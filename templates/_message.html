@@ -76,7 +76,8 @@
                 </div>
             </div>
             <div class="box-footer">
-                <div class="row-fluid">
+                <div class="row-fluid" id="message-footer">
+                <div id="message-footer-padding">
                     <div class="span8 message-stats">
                         <!--{% if message.type == 'status' %}
                         <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-tooltip" data-original-title="Status Message"><i class="icon-envelope post-type"></i></a>
@@ -111,7 +112,7 @@
     </ul>
     {% endspaceless %}" data-original-title="Permissions">Limited</a>
                         {% endif %}
-			on <abbr class="timeago" title="{{ message.published|date('c') }}">{{ message.published|date }}</abbr>
+			<abbr class="timeago" title="{{ message.published|date('c') }}">{{ message.published|date }}</abbr>
                         via {% if message.app.url is defined %}<a href="{{ message.app.url }}" target="_blank">{% endif %}{{ message.app.name }}{% if message.app.url is defined %}</a>{% endif %}
                             {% if message.content.reply is defined %}
                       <!--     in reply to <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-conversation"> {{ message.content.reply.entity.name }}</a> -->
@@ -138,10 +139,18 @@
 
                         </div>
                     </div>
-                </div> 
-                {% if message.type == "status" %}
+
+
+            </div>
+        </div>                {% if message.type == "status" %}
+                <div class="row-fluid conversation-pane hidden-content">
+                    <div class="span12" id="comment-section">
+                        <div class="conversations">
+                        </div>
+                    </div>
+                </div>
                 <div class="row-fluid reply-form hidden-content">
-                    <div class="span12">
+                    <div class="span12" id="comment-section">
                         <form method="post" action="{{ path('stream_write') }}" class="stream-message-add-replyto">
                             <input type="hidden" name="type" value="comment" />
                             <input type="hidden" name="mentioned_entity" value="{{ message.entity.uri }}" />
@@ -165,15 +174,9 @@
                         </form>
                     </div>
                 </div>
-                <div class="row-fluid conversation-pane hidden-content">
-                    <div class="span12">
-                        <div class="conversations">
-                        </div>
-                    </div>
-                </div>
                 {% endif %}
-            </div>
-        </div>
+                </div>
+                </div> 
     </div>
     {% endif %}
 </div>
