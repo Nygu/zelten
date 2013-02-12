@@ -3,31 +3,42 @@
 {% block title %}{{ profile.name }}{% endblock %}
 
 {% block content %}
-        {% include "_profile.html" with {"profile": profile, "you": you} %}
 
-        <div id="stream" data-entity="{{ profile.entity }}">
-            <div class="stream-notifications"></div>
-            <div class="stream-messages"></div>
+<div id="main" class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2"></div>
+        <div class="span8">
+                {% include "_profile.html" with {"profile": profile, "you": you} %}
+    
+               <div id="stream" data-entity="{{ profile.entity }}">
+                    <div class="stream-notifications"></div>
+                    <div class="stream-messages"></div>
+        
+               </div>
         </div>
-{% endblock %}
-
-{% block sidebar %}
-<div class="following">
-    {% include "_user_list.html" with {
-        users: {'list': [], 'total': ''},
-        title: 'following',
-        profile: profile,
-        route: 'user_following'
-    } %}
-</div>
-
-<div class="follower">
-    {% include "_user_list.html" with {
-        users: {'list': [], 'total': ''},
-        title: 'followed by',
-        profile: profile,
-        route: 'user_followers'
-        } %}
+        {% endblock %}
+    
+        {% block sidebar %}
+        <div class="span2">
+            <div class="following">
+                {% include "_user_list.html" with {
+                    users: {'list': [], 'total': ''},
+                    title: 'following',
+                    profile: profile,
+                    route: 'user_following'
+                } %}
+            </div>
+        
+            <div class="follower">
+                {% include "_user_list.html" with {
+                    users: {'list': [], 'total': ''},
+                    title: 'followed by',
+                    profile: profile,
+                    route: 'user_followers'
+                    } %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 

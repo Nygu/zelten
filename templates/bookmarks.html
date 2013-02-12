@@ -3,6 +3,12 @@
 {% block title %}Bookmarks{% endblock %}
 
 {% block content %}
+<div id="main" class="container-fluid">
+<div class="row-fluid">
+<div class="span2" id=""></div>
+
+<div class="span8" id="">
+
 <div id="bookmarks" data-entity="{{ app.session.get('entity_url') }}">
     <div class="box box-highlight">
         <div class="box-content">
@@ -54,6 +60,10 @@
     <div class="list"></div>
 </div>
 
+</div>
+
+<div class="span2" id=""></div>
+
 <script type="text/html" id="bookmark-template">
     <div class="bookmark box">
     <div class="box-content">
@@ -86,6 +96,11 @@
         <div class="pull-right">
         </div>
     </div>
+</div>
+
+
+
+</div>
 </div>
 </script>
 {% endblock %}
