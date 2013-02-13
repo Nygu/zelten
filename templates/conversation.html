@@ -11,12 +11,12 @@
 
     <div class="others">
     {% if parent %}
-        <h6>In reply to</h6>
+  <!--      <h6>In reply to</h6> -->
         {% include "_conversation_message.html" with {"message": parent} %}
     {% endif %}
 
     {% if comments.messages|length > 0 %}
-        <h6>Comments</h6>
+        <h5>Comments</h5>
         {% for message in comments.messages %}
         {% include "_conversation_message.html" with {"message": message} %}
         {% endfor %}

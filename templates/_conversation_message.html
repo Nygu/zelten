@@ -6,12 +6,13 @@
     <div class="span10">
         <header>
             <a class="user-details" id="commenter-name" href="{{ path('stream_user', {'entity': message.entity.uri|url_encode}) }}">{{ message.entity.name }}</a>
-            -  <a class="timeago" id="comment-timeago"" title="{{ message.published|date('c') }}" href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}">{{ message.published|date('H:i') }}</a>
+
         </header>
         {% if message.type == "status" %}
         <p>{{ message.content.text|raw }}</p>
         {% else %}
         {{ message.type }}
         {% endif %}
+            <a class="timeago" id="comment-timeago"" title="{{ message.published|date('c') }}" href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}">{{ message.published|date('H:i') }}</a>
     </div>
 </div>
