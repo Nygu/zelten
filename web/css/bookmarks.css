@@ -31,6 +31,9 @@ body {
 .public-label {
     color: green;
 }
+textarea {
+    resize: none;
+}
 .private-label {
     color: black;
 }
