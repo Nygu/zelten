@@ -227,7 +227,7 @@ Version: 3.2 Timestamp: Mon Sep 10 10:38:04 PDT 2012
     -moz-box-shadow   : 0 0 5px rgba(0,0,0,.3);
     -o-box-shadow     : 0 0 5px rgba(0,0,0,.3);
     box-shadow        : 0 0 5px rgba(0,0,0,.3);
-    border: 1px solid #5897fb;
+    border-top: 1px solid #5897fb;
     outline: none;
 }
 
@@ -364,13 +364,13 @@ disabled look for already selected choices in the results dropdown
 
 .select2-container-multi .select2-choices {
     background-color: #fff;
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+/*    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
       background-image: -webkit-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
       background-image: -moz-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
       background-image: -o-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
       background-image: -ms-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
-      background-image: linear-gradient(top, #eeeeee 1%, #ffffff 15%);
-      border: 1px solid #aaa;
+      background-image: linear-gradient(top, #eeeeee 1%, #ffffff 15%); */
+      border-top: 1px solid #ccc;
       margin: 0;
       padding: 0;
       cursor: text;

@@ -471,7 +471,7 @@ a#notifications {
     box-shadow: none;
     width: 100%;
     text-align: left;
-    color: goldenrod;
+    color: rgb(190, 140, 14);
     padding-left: 10px;
 }
 .stream-controls.active {
@@ -480,7 +480,7 @@ a#notifications {
     box-shadow: none;
     width: 100%;
     text-align: left;
-    color: goldenrod;
+    color: rgb(190, 140, 14);
     padding-left: 10px;
 }
 #login-box {
@@ -495,6 +495,15 @@ a#notifications {
     color: rgb(38, 114, 9);
     text-shadow: none;
     font-weight: normal;
+}
+textarea#publisher-inner {
+    border: none;
+    box-shadow: none;
+}
+.publisher-text-wrapper {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 767px) {
