@@ -57,16 +57,17 @@
 <div id="stream-main" class="container-fluid">
 <div class="row-fluid">
 <div class="span2" id="stream-left-sidebar">
+                <h5>Show:</h5>
                 <div class="filter-post-type pull-right" data-toggle="buttons-radio">
-                    <button value="all" type="button" class="btn active show-tooltip" title="All Posts">All</button>
-                    <button value="status" type="button" class="btn show-tooltip" title="Show only Status Posts"><i class="icon-envelope"></i></button>
+                    <button value="all" type="button" class="btn active stream-controls" title="All Posts">All posts</button>
+                    <button value="status" type="button" class="btn stream-controls" title="Show only Status Posts"> Statuses</button>
                     {% if mentioned_entity is not defined %}
-                    <button value="essay" type="button" class="btn show-tooltip" title="Show only Essays"><i class="icon-pencil"></i></button>
-                    <button value="repost" type="button" class="btn show-tooltip" title="Show only Reposts"><i class="icon-retweet"></i></button>
-                    <button value="bookmark" type="button" class="btn show-tooltip" title="Show only Bookmarks"><i class="icon-link"></i></button>
-                    <button value="favorite" type="button" class="btn show-tooltip" title="Show only Favorited"><i class="icon-star"></i></button>
+                    <button value="essay" type="button" class="btn stream-controls" title="Show only Essays"> Essays</button>
+                    <button value="repost" type="button" class="btn stream-controls" title="Show only Reposts"> Reposts</button>
+                    <button value="bookmark" type="button" class="btn stream-controls" title="Show only Bookmarks"> Bookmarks</button>
+                    <button value="favorite" type="button" class="btn stream-controls" title="Show only Favorited"> Favorited</button>
                     {% else %}
-                    <button value="follower" type="button" class="btn show-tooltip" title="Show only Follower Notifications"><i class="icon-user"></i></button>
+                    <button value="follower" type="button" class="btn stream-controls show-tooltip" title="Show only Follower Notifications"> Follower notifications</button>
                     {% endif %}
                 </div>
 </div>

@@ -113,7 +113,7 @@
     {% endspaceless %}" data-original-title="Permissions">Limited</a>
                         {% endif %}
 			<abbr class="timeago" title="{{ message.published|date('c') }}">{{ message.published|date }}</abbr>
-                        via {% if message.app.url is defined %}<a href="{{ message.app.url }}" target="_blank">{% endif %}{{ message.app.name }}{% if message.app.url is defined %}</a>{% endif %}
+                        via {% if message.app.url is defined %}<a href="{{ message.app.url }}" class="via-link" target="_blank">{% endif %}{{ message.app.name }}{% if message.app.url is defined %}</a>{% endif %}
                             {% if message.content.reply is defined %}
                       <!--     in reply to <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="show-conversation"> {{ message.content.reply.entity.name }}</a> -->
                             {% endif %}

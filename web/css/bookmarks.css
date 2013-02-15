@@ -66,11 +66,13 @@ p.bookmark-description {
 .post-actions {
     font-size: 10pt;
     opacity: 0.7;
+    color: rgb(56, 55, 55);
 }
 .post-actions:hover {
     font-size: 10pt;
     opacity: 1;
     text-decoration: none;
+    color: rgb(56, 55, 55);
 }
 .box-footer a.btn {
     line-height: 10px;
@@ -220,7 +222,7 @@ div#header .brand {
     margin-left: -20px;
     font-size: 40px;
     font-weight: 200;
-    color: rgba(148, 206, 0, 0.9);
+    color: rgb(231, 176, 0);
     text-shadow: 0 1px 1px black;
 }
 div#header .brand:hover {
@@ -363,10 +365,10 @@ div#stream-left-sidebar {
     width: 1000px;
 }
 a {
-    color: rgb(56, 55, 55);
+    color: rgb(0, 138, 17);
 }
 a:hover {
-    color: rgb(56, 55, 55);
+    color: rgb(0, 138, 17);
 }
 .conversation-message {
     color: #333;
@@ -393,6 +395,26 @@ form.stream-message-add-replyto {
 }
 .hidden-content {
     display: none;
+}
+a.user-details {
+    color: rgb(56, 55, 55);
+}
+.timeago {
+    color: #777;
+}
+.timeago:hover {
+    color: rgb(56, 55, 55);
+    text-decoration: underline;
+}
+abbr.timeago {
+    border: none;
+    cursor: pointer;
+}
+.via-link {
+    color: #777;
+}
+.via-link:hover {
+    color: rgb(56, 55, 55);
 }
 .popover-user-details {
     width: 400px;
@@ -428,6 +450,38 @@ a#notifications {
 }
 .label-info[href] {
     background: none;
+    color: green;
+}
+.label-info[href]:hover {
+    background: none;
+    color: green;
+    text-decoration: underline;
+}
+.stream-controls {
+    background: none;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+}
+.stream-controls:hover {
+    background: none;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    text-align: left;
+    color: goldenrod;
+    padding-left: 10px;
+}
+.stream-controls.active {
+    background: none;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    text-align: left;
+    color: goldenrod;
+    padding-left: 10px;
 }
 #login-box {
     background: white;
