@@ -121,19 +121,25 @@
                     <div class="span4 message-footer-padding" style="min-height: 0px;">
                         <div class="pull-right">
                             {% if app.session.get('entity_url') %}
+                                {% if message.type == "status" %}
+                                <a href="#" class="post-actions show-tooltip show-reply" data-original-title="Comment"><i class="icon-comment-alt"></i><span class="total-replies"></span></a>
+                                {% endif %}
+
+                                <a href="#" class="post-actions show-tooltip" data-original-title="Like"><i class="icon-heart-empty"></i></a>
+                                {% if message.canBeReposted() %}
+                                <a href="{{ path('repost', {'post': message.id, 'entity': message.entity.uri|url_encode}) }}" class="post-actions show-tooltip repost" data-original-title="Repost"><i class="icon-retweet"></i></a>
+                                {% endif %}
                                 <a href="{{ path('post_favorite', {'entity': message.entity.uri|url_encode, 'post': message.id}) }}" class="post-actions show-tooltip favorite"
                                     {% if message_is_favorite(message) %}
-                                    data-original-title="Favorited" data-is-favorite="1"><i class="icon-star"></i></a>
+                                    data-original-title="Favorite" data-is-favorite="1"><i class="icon-star"></i></a>
                                     {% else %}
                                     data-original-title="Favorite" data-is-favorite="0"><i class="icon-star-empty"></i></a>
                                 {% endif %}
+        
 
-                                {% if message.canBeReposted() %}
-                                <a href="{{ path('repost', {'post': message.id, 'entity': message.entity.uri|url_encode}) }}" class="post-actions show-tooltip repost" data-original-title="Repost this Message"><i class="icon-retweet"></i></a>
-                                {% endif %}
+
                                 {% if message.type == "status" %}
-                                <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="post-actions show-tooltip show-conversation" data-original-title="View Conversation"><i class="icon-comments-alt"></i> <span class="total-replies"></span></a>
-                                <a href="#" class="post-actions show-tooltip show-reply" data-original-title="Reply"><i class="icon-share-alt"></i></a>
+                                <a href="{{ path('post_conversation', {'id': message.id, 'entity': message.entity.uri|url_encode}) }}" class="post-actions show-tooltip show-reply show-conversation" data-original-title="Show Details"><i class="icon-caret-down"></i></a>
                                 {% endif %}
                             {% endif %}
 
@@ -169,8 +175,8 @@
                             <textarea class="span12 message" name="message" placeholder="Reply to this message..."></textarea>
                             <div class="actions pull-right">
                                 <span class="status-length-left"></span>
-                                <input type="reset" class="btn stream-message-add-cancel" value="Cancel" />
-                                <input type="submit" class="btn btn-success stream-message-add-btn" value="Reply" />
+                                <input type="reset" class="btn btn-mini stream-message-add-cancel" value="Cancel" />
+                                <input type="submit" class="btn btn-mini btn-success stream-message-add-btn" value="Reply" />
                             </div>
                         </form>
                     </div>
